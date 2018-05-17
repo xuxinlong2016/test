@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2011-3-23 11:09:37 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="avatar.base.security.entity.SysRoles" table="SYS_ROLES" >
+        <id name="roleId" type="string">
+            <column name="ROLE_ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="ROLE_NAME" length="40" />
+        </property>
+        <property name="roleDesc" type="string">
+            <column name="ROLE_DESC" length="100" />
+        </property>
+        <property name="enabled" type="java.lang.Boolean">
+            <column name="ENABLED" precision="1" scale="0" />
+        </property>
+        <property name="issys" type="java.lang.Boolean">
+            <column name="ISSYS" precision="1" scale="0" />
+        </property>
+        <property name="module" type="string">
+            <column name="MODULE" length="4" />
+        </property>
+        <set name="sysUsersRoles" inverse="true" cascade="all">
+            <key>
+                <column name="ROLE_ID" length="32" />
+            </key>
+            <one-to-many class="avatar.base.security.entity.SysUsersRoles"/>
+        </set>
+        <set name="sysRolesAuthorities" inverse="true" cascade="all">
+            <key>
+                <column name="ROLE_ID" length="32" />
+            </key>
+            <one-to-many class="avatar.base.security.entity.SysRolesAuthorities" />
+        </set>
+    </class>
+</hibernate-mapping>

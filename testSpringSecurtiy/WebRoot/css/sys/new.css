@@ -1,0 +1,126 @@
+body {
+	margin-left:0px;
+	margin-top:10px;
+	margin-right:0px;
+	margin-bottom:0px;
+}
+
+
+#mytable {
+	margin: 0 auto;
+	border: 1px #BFD4F0 solid;
+}
+
+#mytable th {
+	height: 20px;
+	font: bold 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS",
+		Verdana;
+	color: #000099;
+	letter-spacing: 2px;
+	text-align: center;
+	border: 1px #BFD4F0 solid;
+	border-collapse: collapse;
+	background: url(../../img/sys/2_09_.gif) repeat-x;
+}
+
+#mytable,td.huang {
+	height: 20px;
+	font: 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS", Verdana;
+	color: #000000;
+	text-transform: none;
+	border: 1px #BFD4F0 solid;
+	border-collapse: collapse;
+	background: #BFD4F0;
+}
+
+#mytable,td.lan {
+	height: 20px;
+	font: 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS", Verdana;
+	color: #000000;
+	border: 1px #BFD4F0 solid;
+	border-collapse: collapse;
+	background: #D9F1FF;
+}
+
+#mytable,td.touming {
+	overflow: auto;
+	height: 20px;
+	font: 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS", Verdana;
+	color: #000000;
+	border: 1px #BFD4F0 solid;
+	border-collapse: collapse;
+	background: none;
+}
+
+.STYLE1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.mytable1 {
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 100%;
+	border: 1px #6699ff solid;
+}
+
+.mytable1 th {
+	height: 23px;
+	font: bold 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS",
+		Verdana;
+	color: #000000;
+	letter-spacing: 1px;
+	text-transform: none;
+	text-align: center;
+	line-height: 23px;
+	border: 1px #AFCAED solid;
+	border-collapse: collapse;
+	background: url(../../img/sys/2_091_.gif) repeat-x;
+}
+
+.mytable1,th.row_2 {
+	height: 23px;
+	font: bold 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS",
+		Verdana;
+	color: #000000;
+	letter-spacing: 1px;
+	text-transform: none;
+	text-align: center;
+	line-height: 23px;
+	border: 1px #AFCAED solid;
+	border-collapse: collapse;
+	background: url(../../img/sys/2_092.gif) repeat-x;
+}
+
+.mytable1,td.lan1 {
+	height: 23px;
+	font: 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS", Verdana;
+	color: #000000;
+	text-align: center;
+	line-height: 23px;
+	border: 1px #AFCAED solid;
+	border-collapse: collapse;
+	background: #EBF2FA;
+}
+
+.mytable1,td.touming1 {
+	height: 23px;
+	font: 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS", Verdana;
+	color: #000000;
+	text-align: center;
+	line-height: 23px;
+	border: 1px #AFCAED solid;
+	border-collapse: collapse;
+	background: none;
+}
+
+/*
+.head{
+       height: 20px;
+	  font: bold 12px 宋体, Arial, Helvetica, sans-serif， "Trebuchet MS",
+		Verdana;
+	  color: #000099;
+	  letter-spacing: 2px;
+	  text-align: center;
+} */
+

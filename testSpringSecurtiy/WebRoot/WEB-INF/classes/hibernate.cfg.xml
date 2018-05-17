@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE hibernate-configuration PUBLIC 
+           "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+        
+<hibernate-configuration>
+
+	<session-factory>
+	
+		<!-- 启动容器加载时，删掉原有表结构并重建(该项开启后具有危险性，会删除已有数据)-->
+		<property	name="hbm2ddl.auto">update</property>
+		
+		<property name="connection.useUnicode">true</property>
+		<property name="connection.characterEncoding">GBK</property>        
+      
+		<!-- 指定连接Oracle方言 -->
+		<property name="dialect">
+			org.hibernate.dialect.Oracle9iDialect
+         </property>
+		
+		<!-- 启用hibernate的Session上下文自动管理，启用该选项后，可不必显式关闭Session
+		     但由于使用Spring的HibernateDaoSupport来操作数据库，因此不必设置下面参数 -->
+		<!-- <property name="current_session_context_class">thread</property> -->
+
+		<!-- 配置EhCache为Hibernate的第二级缓存 -->
+	<!-- 	<property name="cache.provider_class">
+			org.hibernate.cache.EhCacheProvider
+		</property> -->
+		
+		<!-- 设置查询缓存(须谨慎使用，暂不配置) -->
+		<property name="cache.use_query_cache">false</property>
+		
+		<!--是否将运行期生成的SQL输出到日志以供调试--> 
+		<property name="show_sql">true</property>
+		
+		<!-- 配置hibernate查询翻译器解决classNotFound问题  -->
+		<!-- Hibernate3: org.hibernate.hql.ast.ASTQueryTranslatorFactory -->
+		
+		<!-- Hibernate2: org.hibernate.hql.classic.ClassicQueryTranslatorFactory
+		      不支持H3的批量删除和更新，另外必须采取将antlr-2.7.6.jar代替Weblogic中的antlr*.jar的办法才可以。
+		      具体部署方式参见框架说明。 -->
+		<property name="hibernate.query.factory_class">
+			org.hibernate.hql.ast.ASTQueryTranslatorFactory
+		</property>
+		
+		
+		<!-- 相关的用户、角色、权限、资源表 -->
+	    <mapping resource="avatar/base/security/res/SysAuthorities.hbm.xml" />
+	    <mapping resource="avatar/base/security/res/SysAuthoritiesResources.hbm.xml" />
+	    <mapping resource="avatar/base/security/res/SysResources.hbm.xml" />
+	    <mapping resource="avatar/base/security/res/SysRoles.hbm.xml" />
+	    <mapping resource="avatar/base/security/res/SysRolesAuthorities.hbm.xml" />
+	    <mapping resource="avatar/base/security/res/SysUsers.hbm.xml" />
+	    <mapping resource="avatar/base/security/res/SysUsersRoles.hbm.xml" />
+
+
+	</session-factory>
+
+</hibernate-configuration>        
+ 
+

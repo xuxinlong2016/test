@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2011-3-23 11:09:37 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="avatar.base.security.entity.SysResources" table="Sys_RESOURCES" >
+        <id name="resourceId" type="string">
+            <column name="RESOURCE_ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="resourceName" type="string">
+            <column name="RESOURCE_NAME" length="100" />
+        </property>
+        <property name="resourceDesc" type="string">
+            <column name="RESOURCE_DESC" length="100" />
+        </property>
+        <property name="resourceType" type="string">
+            <column name="RESOURCE_TYPE" length="40" />
+        </property>
+        <property name="resourceString" type="string">
+            <column name="RESOURCE_STRING" length="200" />
+        </property>
+        <property name="priority" type="java.lang.Boolean">
+            <column name="PRIORITY" precision="1" scale="0" />
+        </property>
+        <property name="enabled" type="java.lang.Integer">
+            <column name="ENABLED" precision="1" scale="0" />
+        </property>
+        <property name="issys" type="java.lang.Integer">
+            <column name="ISSYS" precision="1" scale="0" />
+        </property>
+        <property name="module" type="string">
+            <column name="MODULE" length="4" />
+        </property>
+        <set name="sysAuthoritiesResourceses" inverse="true">
+            <key>
+                <column name="RESOURCE_ID" length="32" />
+            </key>
+            <one-to-many class="avatar.base.security.entity.SysAuthoritiesResources" />
+        </set>
+    </class>
+</hibernate-mapping>

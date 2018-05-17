@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<!-- 开发模式，可打印诸多出错信息以帮助调试。在系统部署之后可设置为false -->
+	<constant name="struts.devMode" value="false" />
+
+	<!-- 对录入数据库的数据进行转码，防止入库为乱码  -->
+	<constant name="struts.i18n.encoding" value="GBK" />
+
+	<!-- 文件上传的临时目录 -->
+	<constant name="struts.multipart.saveDir"
+		value="E:\\eclipse3.4.2\\workspace\\avatar\\webapp\\filePath" />
+
+	<!-- Struts2的转向配置 -->
+	<!--
+		使用struts2的JSON插件所要做的配置是Struts2的配置文件的package要继承json-default，
+		而不是struts-default。json-default已经继承了struts-default的。
+	-->
+	<package name="struts2" extends="json-default">
+
+
+		
+
+
+		<!--
+			忘记密码后填写用户名或邮箱地址发送邮件： 因为使用不到数据库，业务逻辑也不复杂，因此省略buz/mod/dao 10/6/26 12:08
+		-->
+		<action name="ForgotPassword" class="avatar.base.act.ForgotPassword"
+			method="Send" >
+			<result name="input">jsp/forgotpassword.jsp</result>
+			<result name="success">login.jsp</result>
+		</action>
+
+		<!-- 重设密码请求  10/6/27 10:20 -->
+		<action name="ResetPassword" class="avatar.base.act.ResetPassword"
+			method="Reset">
+			<result name="input">jsp/resetpassword.jsp</result>
+			<result name="success">login.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>

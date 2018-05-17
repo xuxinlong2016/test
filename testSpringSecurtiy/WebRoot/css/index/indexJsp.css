@@ -1,0 +1,194 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	background: #fff;
+	/* 滚动条样式*/
+	SCROLLBAR-FACE-COLOR:   #dedede;     
+  	SCROLLBAR-HIGHLIGHT-COLOR:   #F5F9FF;     
+  	SCROLLBAR-SHADOW-COLOR:   #828282;     
+  	SCROLLBAR-3DLIGHT-COLOR:   #828282;     
+  	SCROLLBAR-ARROW-COLOR:   #797979;     
+  	SCROLLBAR-TRACK-COLOR:   #cccccc;     
+  	SCROLLBAR-DARKSHADOW-COLOR:   #ffffff;
+	}
+
+
+/* header */
+#header {
+	border-bottom: 3px solid #87b825;
+	background: #66CCFF;
+	}
+	
+#header h1 {
+	margin: 0;
+	padding: 20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 160%;
+	letter-spacing: 3px;
+	color: #374c0e;
+	background: url(../../img/mainpage/bulls-eye.png) no-repeat top left;
+	}
+	
+	
+	
+#message{
+	font-size: 90%;
+	color: #cc9;
+	text-align: center;
+	margin: 0;
+	height: 30px;
+/*	padding: 15px 0 0 80px;*/
+	background: #404530 url(../../img/mainpage/messageBg.png) repeat-x top left;
+	_background:url(../../img/mainpage/messageBg_IE6.gif) repeat-x top left;
+}	
+
+#message strong {
+	padding: 0 0 0 28px;
+	background: url(../../img/mainpage/cake.png) no-repeat 0 50%;
+	}
+	
+#message #logoscroll {
+	width: 16px;
+	height: 16px;
+	cursor:pointer;
+	}
+
+#messageWrap {
+	float: left;
+	clear: right;
+	padding: 5px 0 3px 30px;
+	}
+	
+#navWrap {
+	float: right bottom;
+	padding: 7px 0 0 30px;
+/*	background: url(../../img/mainpage/bgBoder.gif) repeat-x bottom;*/
+	}
+	
+
+#nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  }
+
+#nav a{
+	float: left;
+	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 8px;
+	color:#333;
+	text-decoration: none;
+	border: 1px solid #9b8748;
+	border-bottom: none;
+	background: #f9e9a9 url(../../img/mainpage/select.gif) repeat-x top left;
+}
+
+#nav a:hover, body#intro #t-intro a{
+	color: #333;
+	padding-bottom: 5px;
+	background-color: #727377;
+	background: #fff url(../../img/mainpage/selected.png) repeat-x top left;
+}
+
+#nav li {
+  float: right;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 80%;
+  }
+
+#wrap {
+	overflow:hidden;
+	clear:both;
+ }
+ 
+#sideBar {
+	width: 22%;
+	float:left;
+	padding-bottom: 5000px;
+	margin-bottom: -5000px;
+}
+
+
+#hideBar {
+	 width:0.4%;
+	 background-color:#EFF7FD;
+	 float:left;
+	 padding-top: 130px;
+	 padding-bottom: 5000px;
+	 margin-bottom: -5000px;
+}
+
+/* Opare Hack */
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){
+#hideBar {
+	 width:1%;
+	 background-color:#EFF7FD;
+	 float:left;
+	 padding-top: 130px;
+	 padding-bottom: 5000px;
+	 margin-bottom: -5000px;
+}
+}
+
+#content{
+	width:77.5%;
+	float:left;
+	padding-bottom: 5000px;
+	margin-bottom: -5000px;
+}
+
+/* IE6 Hack 解决3个横向DIV的百分比宽度之和＝100之后的变形问题（IE6的Bug，margin双倍）*/
+* html #content{
+	width:76%;
+	float:left;
+	padding-bottom: 5000px;
+	margin-bottom: -5000px;
+}
+
+
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){
+#content{
+	width:77.3%;
+	float:left;
+	padding-bottom: 5000px;
+	margin-bottom: -5000px;
+}
+}	
+	
+/* footer */	
+#footer {
+	clear: both;
+	background: #E5E5E5 url(../../img/mainpage/footer-bg.gif) repeat-x top left;
+	}
+
+#footer p {
+	margin: 0;
+	padding: 10px;
+	font-size: 85%;
+	color: #333;
+	}
+	
+/* IE5/Mac hack */
+/* Hide form IE5/Mac \*/
+* html #footer { height: 1%; }
+/* End hide form IE5/Mac */
+
+#lyuc {
+	position:absolute;
+	width:200px;
+	height:400px;
+	z-index:1;
+	border:1px solid #FF0000;
+	background-color:#FFFFFF;
+	right:5px;
+	top:120px;
+	display:none;
+	overflow:hidden;
+}

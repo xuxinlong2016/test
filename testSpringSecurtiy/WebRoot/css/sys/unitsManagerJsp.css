@@ -1,0 +1,156 @@
+body {
+	margin: 5px;
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	background: #fff;
+	/* 滚动条样式*/
+	SCROLLBAR-FACE-COLOR:   #dedede;     
+  	SCROLLBAR-HIGHLIGHT-COLOR:   #F5F9FF;     
+  	SCROLLBAR-SHADOW-COLOR:   #828282;     
+  	SCROLLBAR-3DLIGHT-COLOR:   #828282;     
+  	SCROLLBAR-ARROW-COLOR:   #797979;     
+  	SCROLLBAR-TRACK-COLOR:   #cccccc;     
+  	SCROLLBAR-DARKSHADOW-COLOR:   #ffffff;
+	}
+	
+#unitsTreeWrap{
+	float:left;
+	width:25%;
+	border:solid 1px #000099;
+}
+
+#treeNav {
+	float: left;
+	width: 200px;
+/*	margin-bottom: 10px;*/
+	}
+	
+#navWrap {
+	float: top;
+	background: #f7d483;
+	width: 200px;
+}
+
+.button {
+/*	background: #f7d483;*/
+	width: 22px;
+	height: 22px;
+/*	margin: auto 2px;*/
+/*  float: left top;*/
+	}
+
+
+/* 树型菜单导航栏上的圆角 */
+#treeNav #r1 {
+	height:1px;
+	overflow:hidden;
+	margin:0 5px;
+	background:#f7d483;
+}
+#treeNav #r2 {
+	height:1px;
+	border-left:2px solid #f7d483;
+	border-right:2px solid #f7d483;
+	margin:0 3px;
+	background:#f7d483;
+	overflow:hidden;
+}
+#treeNav #r3 {
+	height:1px;
+	border-left:1px solid #f7d483;
+	border-right:1px solid #f7d483;
+	margin:0 2px;
+	background:#f7d483;
+	overflow:hidden;
+}
+#treeNav #r4 {
+	height:2px;
+	border-left:1px solid #f7d483;
+	border-right:1px solid #f7d483;
+	margin:0 1px;
+	background:#f7d483;  /*f7d483*/
+	overflow:hidden;
+} 
+
+#treeWrap {
+	clear: both;
+/*	margin-top: 10px;*/
+/*	padding-top: 5px;*/
+/*	vertical-align: middle;*/
+	font-size: 95%;
+	}
+	
+#tree {
+	height:380px;
+	overflow:auto;
+/*	clear: both;
+	font-size: 95%;*/
+	}
+
+/*单位信息：名称、单位类型、是否末级节点等*/
+#unitsInfoWrapper{
+	position:absolute;
+	float: right;
+	width: 74%;
+	border:solid 1px #000099;
+/*	margin-top:25px;*/
+	margin-left: 20px;
+}
+
+#unitsInfo{
+	margin-left: 15px;
+	margin-right: 20px;
+}
+
+/*导航栏*/
+#navigation {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding:3px 0 3px 20px;
+	font-size: 100%;
+	font-weight: bold;
+	color: #009720;  /* #009900; #77985c;*/
+/*	background: #C7C7C7;*/
+	position: relative;
+	top: -4px;
+	left: -4px;
+	}
+	
+#nav {
+	background: #c7c7c7;
+	margin:0;
+	padding: 5px 0 5px 5px;
+	}
+
+/* 导航栏的圆角 */
+#navigation #r1 {
+	height:1px;
+	overflow:hidden;
+	margin:0 5px;
+	background:#C7C7C7;
+}
+#navigation #r2 {
+	height:1px;
+	border-left:2px solid #C7C7C7;
+	border-right:2px solid #C7C7C7;
+	margin:0 3px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+#navigation #r3 {
+	height:1px;
+	border-left:1px solid #C7C7C7;
+	border-right:1px solid #C7C7C7;
+	margin:0 2px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+#navigation #r4 {
+	height:2px;
+	border-left:1px solid #C7C7C7;
+	border-right:1px solid #C7C7C7;
+	margin:0 1px;
+	background:#C7C7C7;
+	overflow:hidden;
+}

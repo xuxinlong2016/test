@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+   http://www.springframework.org/schema/tx
+   http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+   http://www.springframework.org/schema/jee
+   http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!--
+		配置sessionFactory ：让Spring来创建Hibernate的Session，
+		因此不必使用另外的Java代码来创建该Session。 (理论上可配置多个SessionFactory来适应多个数据源-不过不能是同一ID)
+	-->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+
+	</bean>
+
+	<!--
+		C3P0数据源:专门针对Spring
+		Security定义一个数据源,原因是sessionFactory返回的是一个类，而非一个java.sql.DataSource。
+	-->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="jdbcUrl">
+	        <!---->
+			<value>jdbc:oracle:thin:@127.0.0.1:1521:orcl</value>
+			<!--   <value>jdbc:oracle:thin:@192.168.0.15:1521:ORA9</value> -->
+		</property>
+		<property name="user">
+			<value>xinlong</value>
+		</property>
+		<property name="password">
+			<value>sa</value>
+		</property>
+
+		<property name="acquireIncrement">
+			<value>2</value>
+		</property>
+		<property name="initialPoolSize">
+			<value>3</value>
+		</property>
+		<property name="minPoolSize">
+			<value>5</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>20</value>
+		</property>
+		<property name="maxIdleTime">
+			<value>600</value>
+		</property>
+		<property name="idleConnectionTestPeriod">
+			<value>120</value>
+		</property>
+		<property name="maxStatements">
+			<value>100</value>
+		</property>
+		<property name="numHelperThreads">
+			<value>10</value>
+		</property>
+	</bean>
+
+
+
+
+	<!-- 配置事务管理器
+        (理论上可配置多个transactionManager来适应多个数据源-不过不能是同一ID) -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!--
+		对事务管理器进行事务设置。增加如下代码： 这里创建了一个advice(通知)，对事务管理器进行事务设置，这里意思是指，
+		对于以save、del、update开头的方法应用事务。
+	-->
+	<tx:advice id="smAdvice" transaction-manager="transactionManager">
+		<!-- 设置事务传播属性 -->
+		<tx:attributes>
+			<tx:method name="find*" read-only="true" rollback-for="Exception" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="edit*" propagation="REQUIRED" />
+			<tx:method name="display*" propagation="REQUIRED" />
+			<tx:method name="get*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 下面就把事务应用到具体的类  -->
+	<aop:config>
+		<!--
+			<aop:pointcut id="smMethod" expression="execution(*
+			avatar.app.cost.buz.impl.*.*(..))"/>
+		-->
+		<aop:pointcut id="smMethod" expression="execution(* avatar.*.buz.impl.*.*(..))" />
+		<aop:advisor pointcut-ref="smMethod" advice-ref="smAdvice" />
+	</aop:config>
+
+
+	<!-- 以下配置Action、Services、Dao -->
+
+
+
+	<!-- 用户管理-显示 action-->
+	<bean id="userAct" class="avatar.sys.act.UserAct" scope="prototype">
+		<property name="userBuz" ref="userBuz" />
+	</bean>
+
+	<!-- 用户管理-显示 business logic -->
+	<bean id="userBuz" class="avatar.sys.buz.impl.UserBuzImpl">
+		<property name="sysUsersDao" ref="sysUsersDao" />
+	</bean>
+
+	<!-- 用户管理 model 通过该配置将Model注入进来   -->
+	<bean id="users" class="avatar.base.security.entity.SysUsers" /> 
+
+	
+	<!-- 注入SysUsersDao和SysAuthoritiesResourcesDao（通过数据库管理用户、角色、权限和资源）-->
+	<bean id="sysUsersDao" class="avatar.base.security.dao.SysUsersDao">
+		<property name="passwordEncoder" ref="passwordEncoder"/>
+		<property name="sysRolesDao" ref="sysRolesDao"></property>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 用户的密码加密或解密 -->
+	<bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+	
+	
+	<bean id="sysRolesDao" class="avatar.base.security.dao.SysRolesDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="sysAuthoritiesResourcesDao" class="avatar.base.security.dao.SysAuthoritiesResourcesDao">
+		<property name="sessionFactory" ref="sessionFactory" />  
+	</bean> 
+
+</beans> 

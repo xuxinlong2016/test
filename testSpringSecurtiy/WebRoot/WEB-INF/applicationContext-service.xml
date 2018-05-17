@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+   http://www.springframework.org/schema/tx
+   http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+   http://www.springframework.org/schema/jee
+   http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+   http://www.springframework.org/schema/util 
+   http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	
+	<!-- 定义上下文返回的消息的国际化。（新版本） 11/3/23 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename"
+			value="classpath:org/springframework/security/messages_zh_CN"/>
+	</bean>
+
+	<!--
+		事件监听:实现了 ApplicationListener监听接口,
+		包括AuthenticationCredentialsNotFoundEvent 事件，
+		AuthorizationFailureEvent事件，AuthorizedEvent事件， PublicInvocationEvent事
+		件。 -->
+	<bean
+		class="org.springframework.security.authentication.event.LoggerListener" />
+
+	<!-- 用户的密码加密或解密 -->
+	<bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+	  
+	<!-- 用户详细信息管理：数据源、用户缓存（通过数据库管理用户、角色、权限、资源）。（新版本） 11/3/23  -->
+	<bean id="userDetailsManager" class="avatar.base.security.CustomUserDetailsService">
+		<property name="sysUsersDao" ref="sysUsersDao" />
+		<property name="sysAuthoritiesResourcesDao" ref="sysAuthoritiesResourcesDao" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="userCache" ref="userCache" />
+	</bean>  
+	<bean id="sysUsersDao" class="avatar.base.security.dao.SysUsersDao"></bean>
+	<bean id="sysAuthoritiesResourcesDao" class="avatar.base.security.dao.SysAuthoritiesResourcesDao"></bean>
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="jdbcUrl">
+	        <!---->
+			<value>jdbc:oracle:thin:@127.0.0.1:1521:orcl</value>
+			<!--   <value>jdbc:oracle:thin:@192.168.0.15:1521:ORA9</value> -->
+		</property>
+		<property name="user">
+			<value>xinlong</value>
+		</property>
+		<property name="password">
+			<value>sa</value>
+		</property>
+
+		<property name="acquireIncrement">
+			<value>2</value>
+		</property>
+		<property name="initialPoolSize">
+			<value>3</value>
+		</property>
+		<property name="minPoolSize">
+			<value>5</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>20</value>
+		</property>
+		<property name="maxIdleTime">
+			<value>600</value>
+		</property>
+		<property name="idleConnectionTestPeriod">
+			<value>120</value>
+		</property>
+		<property name="maxStatements">
+			<value>100</value>
+		</property>
+		<property name="numHelperThreads">
+			<value>10</value>
+		</property>
+	</bean>
+	<!-- 启用用户的缓存功能 -->
+	<bean id="userCache"
+		class="org.springframework.security.core.userdetails.cache.EhCacheBasedUserCache">
+		<property name="cache" ref="userEhCache" />
+	</bean>
+	
+	<bean id="userEhCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheName" value="userCache" />
+		<property name="cacheManager" ref="cacheManager" />
+	</bean>
+	
+	<bean id="cacheManager"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+
+
+	<!-- spring security自带的与权限有关的数据读写Jdbc模板 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 设置权限的前缀为AUTH_，而不是ROLE_。 -->
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+    	<property name="rolePrefix" value="AUTH_"/>
+    </bean>
+	
+
+	<!-- acl（access control list）缓存管理 -->
+	<bean id="aclCache"
+		class="org.springframework.security.acls.domain.EhCacheBasedAclCache">
+		<constructor-arg ref="aclEhCache" />
+	</bean>
+	
+	<bean id="aclEhCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="aclCache" />
+	</bean>
+
+
+</beans>

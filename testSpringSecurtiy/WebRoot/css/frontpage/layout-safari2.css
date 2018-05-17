@@ -1,0 +1,13 @@
+
+.gwt-FileUpload { margin-top: 0; }
+
+table.hsplitter { cursor: default; }
+
+.dragdrop-handle { cursor: pointer !important; }
+
+.lozengeWidget, #popout .lozengeWidget { padding-bottom: 5px; }
+.lozengeWidget .gwt-Label { padding-bottom: 5px; }
+
+.SearchExplanationBox .AccountLink .Icon {
+  vertical-align: bottom;
+}

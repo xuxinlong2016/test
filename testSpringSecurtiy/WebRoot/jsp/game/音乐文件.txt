@@ -1,0 +1,9 @@
+喜欢音乐的话可添加音乐到本文件夹下：
+音乐名称:(扩展名一定要wav格式)
+
+背景音乐：backmusic.wav
+变形音乐change.wav
+变化速度音乐：changespeed.wav
+一键到底音乐：down.wav
+没过关音乐：fail.wav
+消去时音乐：xiaoqu.wav

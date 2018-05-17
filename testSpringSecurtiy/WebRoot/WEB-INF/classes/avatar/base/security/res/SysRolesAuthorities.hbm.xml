@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2011-3-23 11:09:37 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="avatar.base.security.entity.SysRolesAuthorities" table="SYS_ROLES_AUTHORITIES" >
+        <id name="id" type="long">
+            <column name="ID" precision="13" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="sysAuthorities" class="avatar.base.security.entity.SysAuthorities" fetch="select">
+            <column name="AUTHORITY_ID" length="32" />
+        </many-to-one>
+        <many-to-one name="sysRoles" class="avatar.base.security.entity.SysRoles" fetch="select">
+            <column name="ROLE_ID" length="32" />
+        </many-to-one>
+        <!--  
+        <property name="authorityId" type="string">
+            <column name="AUTHORITY_ID" length="32" />
+        </property>
+        <property name="roleId" type="string">
+            <column name="ROLE_ID" length="32" />
+        </property> -->
+        <property name="enabled" type="java.lang.Boolean">
+            <column name="ENABLED" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

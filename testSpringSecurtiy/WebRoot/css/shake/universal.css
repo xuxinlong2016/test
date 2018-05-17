@@ -1,0 +1,935 @@
+/*
+==== Colors: ====================
+		White		: #ffffff	
+		Twuffer Blue: #289eb3
+		Light Blue	: #e9f7f9
+		Dark Blue	: #1e8698
+		BG Rule Blue: #a6d8df
+		Border Blue	: #e2eff1
+		Green		: #78d063
+		Body Copy	: #45696f
+=================================
+*/
+
+html{height: 101%;}
+body{
+	margin: 0; padding: 0;
+	background: #fff url(../_img/bg.png) 0 0 repeat-x;
+	font-family: "lucida grande", helvetica, arial; font-size: 12px; color: #45696f;
+	line-height: 140%;
+	text-align: center;
+}
+
+.ui-effects-transfer { border: 1px solid black; } 
+.transferring { background-color: #fff; opacity: 0.5; } 
+
+.accessibility{	display: none; }
+
+a, a:visited {color:#1e8698}
+a:hover {color:#78d063}
+
+p{
+	margin: 0; padding: 7px 0;
+	line-height: 140%;
+}
+
+.red{color: #a00 !important;}
+
+.notice h3{
+	line-height: 140%;
+	color: #78d063;
+}
+
+
+.js_func{display: none !important;}
+
+.left{float: left;}
+.right{float: right;}
+.error{color: #a00 !important;}
+
+.queued_tweets .message{
+	display: block;
+	margin: 0 -18px; padding: 0px;
+	width: 725px;
+	float: left;
+	text-align: center;
+	font-size: 120%;
+}
+.queued_tweets .message p{margin: 10px; padding: 0;}
+.queued_tweets .adding,
+.queued_tweets .success{
+	border-bottom: 1px solid #e3df99;
+	color: #8e8b55;
+	background: #f4f3db;
+}
+
+.queued_tweets .error{
+	border-bottom: 1px solid #8b0000 !important;
+	color: #a00 !important;
+	background: #dfc1c1 !important;
+}
+
+	.container{
+		display: block;
+		margin: 0 auto; padding: 0 0 16px 0;
+		width: 747px;
+		background: transparent /* url(../_img/bg_shadow.png) bottom center no-repeat */ ;
+		text-align: left;
+		clear: both;
+	}
+		body>.container{background: transparent /* url(../_img/bg_shadow.png) bottom center no-repeat; */ }
+
+		.home{
+			background: transparent url(../_img/container_pole.png) left bottom no-repeat !important;
+			padding-bottom: 30px;
+		}
+		
+		.foot_home{
+			margin-top: 0 !important;
+		}
+		
+		
+		
+		
+		.head{
+			display: block;
+			margin: 0; padding: 0;
+			width: 747px; height: 107px;
+			background: transparent;
+			position: relative;
+		}
+		
+			h1{
+				display: block;
+				margin: 0; padding: 0;
+				width: 234px; height: 69px;
+				background: transparent;
+				position: absolute; top: 25px; left: 10px;
+			}
+				
+				h1 a{
+					display: block;
+					margin: 0; padding: 0;
+					width: 234px; height: 69px;
+					background: transparent url(../_img/twuffer.png) 0 0 no-repeat;;
+					text-indent: -5000px;
+					outline: 0;
+				}
+				
+			.logout{
+				font-size: 95%;
+				position: absolute; top: 0px; right: 10px;
+			}
+				.logout a{
+					padding-left: 10px;
+					color: #a00;
+				}
+				
+			.current_status{
+				display: block;
+				margin: 0; padding: 0 55px;
+				width: 275px; height: 70px;
+				background: transparent url(../_img/current_status_bg.png) 0 0 no-repeat;
+				position: absolute; top: 30px; right: 50px;
+			}
+				.current_status h2{
+					margin: 0; padding: 0;
+					color: #1e8698;
+					font-size: 110%;
+				}
+				
+				.current_status p{
+					margin: 0; padding: 0;
+					color: #45696f;
+					line-height: 130%;
+					font-size: 90%;
+				}
+				
+			.login_form,
+			.tr_block{
+				display: block;
+				margin: 0; padding: 0;
+				width: 472px;
+				border: 0;
+				position: absolute; top: 43px; right: 0px;
+			}
+			
+				.login_message,
+				.beta_message{
+					display: block;
+					margin: 0; padding: 0;
+					clear: both;
+					position: relative;
+					color: #4F939C;
+				}
+					.login_message img,
+					.beta_message img{
+						position: absolute; top: 0; left: -20px;
+					}
+				.login_form fieldset{margin: 0; padding: 0; border: 0;}
+					.login_form .field{
+						display: block;
+						margin: 0; padding: 0;
+						width: 185px;
+						float: left; clear: none;
+					}
+						.login_form .field label{
+							display: block;
+							color: #289eb3;
+						}
+						.login_form .field input{
+							width: 163px;
+							border: 1px solid #86c9d4;
+							margin: 0; padding: 6px;
+							background: #fff;
+							color: #333;
+						}
+					.login_form .buttons{
+						display: block;
+						margin: 0; padding: 0;
+						width: 88px; height: 46px;
+						float: left; clear: none;
+						position: relative;
+					}
+						.login_form .buttons input{
+							display: block;
+							margin: 12px 0 0 0; padding: 0;
+							height: 28px; width: 88px;
+							border: 0;
+							position: absolute; bottom: 0; left: 0;
+							outline: 0;
+						}
+							.login_form input.btn_login{background: transparent url(../_img/btn_login.png) 0 0 no-repeat; text-indent: -5000px; }
+							.login_form div.buttons input:hover{background-position: bottom left;}
+		
+		.cont{
+			display: block;
+			margin: 0 10px; padding: 30px 0px 20px;
+			width: 725px;
+			background: #fff;
+			border: 1px solid #cadde0;
+			float: left; clear: both;
+			z-index: 1;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			position: relative;
+		}
+		
+			.fill{
+				padding: 10px 30px !important;
+			}
+			.not_logged_in{
+				display: block;
+				margin: -30px 0 20px; padding: 10px;
+				width: 705px;
+				background: #a00;
+				text-align: center; color: #fff; font-weight: bold; font-size: 110%;
+			}
+			
+			.cont h2{
+				font-size: 19px;
+				margin: 0; padding: 0 0 10px 0;
+			}
+			
+			.cont h3{
+				font-size: 15px;
+				margin: 0; padding: 20px 0 0px;
+			}
+		
+			.intro{
+				display: block;
+				margin: 0; padding: 0 30px;
+				width: 665px;
+				float: left; clear: both;
+			}
+			
+				.intro .stbutton{
+					position: absolute; bottom: -1px; left: -1px;
+					border: 1px solid #cadde0;
+					background-color: #e9f7f9 !important;
+					background-position: 6px 6px !important;
+					padding: 6px 6px 4px 28px;
+					-moz-border-radius-bottomleft: 4px;
+					-moz-border-radius-topright: 4px;
+					text-decoration: none; color: #45696f;
+				}
+					.intro .stbutton:hover{
+						background-color: #cadde0 !important;
+						color: #333;
+					}
+			
+				.intro .block{
+					display: inline;
+					margin: 0; padding: 0;
+					width: 330px;
+					clear: none;
+				}
+					.intro .block img{float: right; border: 0;}
+					
+					.intro .block h2{
+						margin: 0; padding: 0 0 7px 0;
+						color: #1e8698;
+						font-size: 180%;
+					}
+
+					.intro .block h3{
+						font-size: 13px;
+						margin: 0; padding: 10px 0;
+						color: #87BC49;
+					}
+					
+					.intro .block p{ }
+					
+					.intro ul{
+						list-style-image: url(../_img/icon_arrow_green.png);
+					}
+
+					.intro .block .tm{
+						font-size: normal;
+						}
+					.intro .block hr{
+						border:1px dotted #ddd;
+						border-width:1px 0 0 0;
+						}						
+					
+			.status_update_form{
+				display: block;
+				margin: -30px 0px 0px; padding: 0;
+				width: 725px;
+				background: #289eb3;
+			}
+			
+				.status_update_form textarea{
+					-moz-border-radius: 2px;
+					-webkit-border-radius: 2px;
+					border-radius: 2px;
+				}
+				
+				.status_update_form input{
+					-moz-border-radius-topleft: 2px;
+					-moz-border-radius-bottomleft: 2px;
+					-webkit-border-top-left-radius: 2px;
+					-webkit-border-bottom-left-radius: 2px;
+					border-top-left-radius: 2px;
+					border-bottom-left-radius: 2px;
+				}
+				
+				.status_update_form select{
+					-moz-border-radius-topright: 2px;
+					-moz-border-radius-bottomright: 2px;
+					-webkit-border-top-right-radius: 2px;
+					-webkit-border-bottom-right-radius: 2px;
+					border-top-right-radius: 2px;
+					border-bottom-right-radius: 2px;
+				}
+				
+				
+				.status_update_form fieldset{
+					display: block;
+					width: 695px;
+					float: left; clear: left;
+					border: 0;
+					border-bottom: 1px solid #1f8da3;
+				}
+				fieldset.status_field{
+					margin: 0; padding: 15px 15px 0px;
+					width: 695px;
+					background: #289eb3 url(../_img/status_bg.png) bottom left repeat-x;
+					-moz-border-radius-topleft: 4px;
+					-moz-border-radius-topright: 4px;
+					-webkit-border-top-left-radius: 4px;
+					-webkit-border-top-right-radius: 4px;
+					border-top-left-radius: 4px;
+					border-top-right-radius: 4px;
+				}
+				.status_update_form>fieldset.status_field{
+					padding-bottom: 15px;
+				}
+				
+				fieldset.when_and_submit{
+					margin: 0; padding: 15px 15px 15px;
+					width: 695px;
+					background: #1e8698 /* url(../_img/when_bg.png) top left repeat-x */ ;
+					border-top: 1px solid #166c7a;
+					border-bottom: 1px solid #156775;
+				}
+					
+					.status_update_form div{
+						display: block;
+						margin: 0; padding: 0;
+						position: relative;
+						float: left; clear: none;
+					}
+					
+						.status_update_form div.status_field{
+							height: 50px;
+						}
+						html>body .status_update_form div.status_field{
+							height: 50px;
+						}
+					
+					.status_update_form div.status_field label{
+						display: block;
+						margin: 0; padding: 5px 0 0 0;
+						width: 155px;
+						font-size: 120%; font-weight: bold;
+						color: #fff;
+						float: left; clear: none;
+					}
+					.status_update_form div.status_field textarea{
+						margin: 0; padding: 6px;
+						border: 0;
+						width: 528px; height: 40px;
+						background: #fff; font-family: inherit; font-size: 90%; letter-spacing: .05em;
+						float: right; clear: none;
+					}
+						span#tweetDown{
+							display: block;
+							text-align: center;
+							padding: 2px 4px;
+							width: 20px; height: 15px;
+							font-size: 120%;
+							color: #fff;
+							font-family: georgia;
+							background: #1e8698;
+							position: absolute; top: 35px; right: -1px;
+							-moz-border-radius-topleft: 2px;
+						}
+					
+					.status_update_form div.time_field label{
+						display: block;
+						margin: 0; padding: 5px 0 0 0;
+						width: 155px;
+						font-size: 120%; font-weight: bold;
+						color: #d6f9ff;
+						float: left; clear: none;
+					}
+					
+						.status_update_form div.time_field span.at{
+							display: block;
+							margin: 0; padding: 5px 0 0 0;
+							width: 25px; height: 23px;
+							font-size: 120%; font-weight: bold; text-align: center;
+							background: #e1f3f6;
+							color: #608a91;
+							float: left; clear: none;
+						}
+					
+					.status_update_form div.time_field input,
+					.status_update_form div.time_field select{
+						margin: 0; padding: 6px;
+						border: 0;
+						width: 142px; height: 16px;
+						background: #e1f3f6;
+						font-family: inherit; font-size: 110%; letter-spacing: .05em; color: #608a91;
+						float: left; clear: none;
+					}
+						.status_update_form div.time_field select{
+							width: 152px; height: 28px;
+						}
+						html>body .status_update_form div.time_field select{
+							width: 152px; height: 22px;
+						}
+						
+						span.select_time{
+							display: block;
+							width: 152px; height: 22px;
+							float: left;
+							background: #e1f3f6;
+							margin: 0px 0 0 0; padding: 3px 0;
+							position: relative;
+						}
+						
+						html>body span.select_time{
+							padding: 0; margin: 0; height: 28px;
+						}
+						span.select_time select{width: 147px !important; border: 0; margin: 0; padding: 0; position: absolute; top: 3px; left: 0px;}
+						html>body span.select_time select{width: 147px !important; border: 0; margin: 0; padding: 2px 0 0 0 !important; position: absolute; top: 3px; left: 0px;}
+						
+					
+					div.update_status_button{
+						display: block; float: right; height: 29px; width: 197px;
+						background: transparent url(../_img/posting_loading_small.gif) center no-repeat;
+					}
+					
+					.status_update_form div.update_status_button input{
+						margin: 1px 0 0 0; padding: 6px;
+						border: 0;
+						width: 197px; height: 29px;
+						color: transparent; text-indent: -5000px;
+						background: #10444d url(../_img/btn_set_status_green.png) 0 0 no-repeat; font-family: inherit; font-size: 90%; letter-spacing: .05em;
+						float: right; clear: none;
+						outline: 0;
+						position: relative;
+					}
+						.status_update_form div.update_status_button input:hover{
+							background-position: bottom left;
+						}
+					
+					
+			ul.manager_tabs{
+				display: block;
+				margin: 0px 0 0 0; padding: 10px 15px 0;
+				width: 695px;
+				background: #c5ebb9;
+				border-top: 1px solid #9ac88c;
+				border-bottom: 1px solid #8fb385;
+				float: left; clear: both;
+			}
+				
+				
+				.manager_tabs li{
+					display: inline;
+					margin: 0 5px 0 0;
+					float: left; clear: none;
+				}
+				
+					.manager_tabs li a{
+						display: inline;
+						margin: 0; padding: 5px 8px;
+						background: #afdaa2;
+						color: #5e8d50 !important;
+						font-size: 120%; font-weight: bold;
+						text-decoration: none;
+						float: left; clear: none;
+						
+						-moz-border-radius-topleft: 2px;
+						-moz-border-radius-topright: 2px;
+						-webkit-border-top-left-radius: 2px;
+						-webkit-border-top-right-radius: 2px;
+						border-top-left-radius: 2px;
+						border-top-right-radius: 2px;
+					}
+						.manager_tabs li a:hover{
+							background: #96c788;
+							color: #1f4613 !important;
+						}
+						.manager_tabs li.ui-tabs-selected a,
+						.manager_tabs li a:active{
+							background: #fff;
+							color: #1e8698 !important;
+							outline: 0;
+							padding-bottom: 8px;
+							margin-bottom: -3px;
+							z-index: 1000;
+						}
+					
+			.queued_tweets{
+				display: block;
+				margin: 0px 0 -8px; padding: 0 18px;
+				width: 689px;
+				min-height: 200px;
+				float: left; clear: both;
+				border-top: 1px solid #ddd;
+				z-index: 0;
+				position: relative;
+			}
+				.queued_tweets div{
+					width: 689px;
+					float: left; clear: both;
+				}
+				
+					p.last_updated{
+						color: #bbb;
+						margin: 0; padding: 10px 0 5px;
+						float: right;
+					}
+				
+					#dashboard ul.counts,
+					#dashboard ul.sending_soon,
+					#dashboard ul.sent_last,
+					
+					#admin ul.counts,
+					#admin ul.sending_soon,
+					#admin ul.sent_last{
+						width: 677px;
+						margin: 5px 0 5px; padding: 5px;
+						list-style: none;
+						float: left; clear: both;
+						border: 1px solid #ddd;
+						background: #fdfdfd;
+						border-right-width: 2px;
+						border-bottom-width: 2px;
+						-moz-border-radius: 2px;
+					}
+						#dashboard ul.counts li,
+						#admin ul.counts li{
+							display: block;
+							margin: 0 5px; padding: 5px 10px 10px;
+							width: 192px;
+							float: left; clear: none;
+							text-align: center;
+							color: #5E8D50; font-weight: bold; font-size: 110%;
+							background: #fff;
+						}
+							#dashboard ul.counts li strong,
+							#admin ul.counts li strong{
+								display: block;
+								padding: 10px 0;
+								width: 190px;
+								text-align: center;
+								font-size: 250%;
+								color: #1F4613;
+							}
+			
+				.indicator{
+					display: block;
+					margin: 0; padding: 0;
+					width: 16px; height: 16px;
+					background: transparent url(../_img/indicator.png) 0 0 no-repeat;
+					text-indent: -5000px;
+					position: absolute; top: -26px; right: 30px;
+				}
+			
+				.queued_tweets h2{
+					margin: 15px 0 0 0; padding: 0;
+				}
+				
+				.queued_tweets table{
+					width: 689px;
+					margin: 15px 0 0 0; padding: 0;
+					border: 0; border-collapse: collapse;
+					border-spacing: 0;
+				}
+					table, th, tr, td{
+						-moz-border-radius: 4px;
+						-webkit-border-radius: 4px;
+						border-radius: 4px;
+					}
+					
+					.queued_twets table tr{
+						display: block;
+						position: relative;
+					}
+					.queued_tweets table th{
+						padding: 5px;
+						font-size: 100%;
+						color: #45696f;
+						border-bottom: 1px solid #45696f;
+					}
+						th.th_date{width: 160px;}
+						th.th_time{width: 95px;}
+						th.th_options{width: 30px; position: relative;}
+							.popUp{
+								display: none;
+								margin: 0; padding: 10px;
+								width: 300px; height: 150px;
+								position: absolute; top: 0; left: 0;
+								background: #a00;
+								z-index: 999;
+							}
+					
+					.queued_tweets table td{
+						padding: 10px 5px;
+					}
+					
+					.queued_tweets table tr.odd{
+						background: #e9f7f9;
+					}
+					
+					tr ul{margin: 0; padding: 0;}
+					tr ul li {margin: 0; padding: 0; list-style: none; display: inline; margin-right: 4px;}
+						tr ul li a img{border: 0}
+					
+					.actual_sent_time{
+						color: #999;
+						font-size: 9px;
+					}
+						
+					table p{
+						display: none;
+					}
+					
+					
+					
+					
+					#options_form{
+						display: block;
+						margin: 0; padding: 0;
+						border: 0;
+					}
+						#options_form fieldset{margin: 0; padding: 0; border: 0;}
+							#options_form fieldset div{
+								display: block;
+								margin: 0; padding: 5px 0;
+								float: left; clear: both;
+							}
+								#options_form fieldset div.field label{
+									display: block;
+									margin: 0; padding: 3px 0;
+									width: 240px; float: left; clear: left;
+									color: #666; font-weight: bold;
+								}
+								#options_form fieldset div.field input{}	
+				
+				#admin{}
+
+					
+					
+		.sub_cont{
+			display: block;
+			margin: 0 10px 0 0px; padding: 30px 0 0;
+			width: 727px;
+			background: #fff;
+			border: 0;
+			float: left; clear: both;
+			z-index: 1;
+		}
+			html>body .sub_cont{
+				margin-left: 0 10px;
+			}
+		
+			.sub_cont .block{
+				display: inline;
+				margin: 0; padding: 15px 20px;
+				width: 310px; height: 110px;
+				clear: none;
+				border: 1px solid #cadde0;
+				text-decoration: none;
+				color: #45696f;
+				position: relative;
+			}
+				html>body .sub_cont .block{
+					height: 110px;
+					min-height: 110px;
+				}
+				.sub_cont .block:hover{background: #e9f7f9; }
+					
+					.sub_cont .block img{
+						position: absolute; top: 20px; left: 20px;
+						border: 0;
+					}
+					
+					.sub_cont .block p{
+						padding-left: 110px;
+					}
+					
+					
+					.recent_tweets{
+						background: transparent url(../_img/birdsOnWire.png) 0 0 no-repeat;
+					}
+					.recent_tweets:hover{
+						background-image: url(../_img/birdsOnWire.png) !important;
+					}
+					
+					.recent_tweets_fill{
+						display: inline;
+						margin: 30px 10px 0 20px; padding: 0;
+						width: 727px; height: 142px;
+						clear: none;
+						border: 0px solid #cadde0;
+						text-decoration: none;
+						color: #45696f;
+						position: relative;
+						background: #fff url(../_img/birdsOnWireWide2.png) 0 0 no-repeat;
+					}
+						html>body .recent_tweets_fill{
+							margin-left: 10px;
+						}
+						.recent_tweets_fill p{
+							display: block;
+							margin: 0; padding: 0;
+							width: 390px;
+							position: absolute; top: 10px; left: 130px;
+						}
+						
+					.recent_tweets_fill:hover{
+						background-image: url(../_img/birdsOnWireWide2.png) !important;
+					}
+					
+					.sub_cont .block .beta_testers_form{
+						display: block;
+						margin: 10px -20px -15px -20px; padding: 15px 20px 15px;
+						width: 310px;
+						border-top: 1px solid #cadde0;
+						background: #eff6f7 url(../_img/block_drop_bg.png) 0 0 repeat-x;
+						position: relative;
+					}
+						html>body .sub_cont .block .beta_testers_form{
+							margin: 10px -20px -15px;
+							float: right;
+						}
+						
+						.ui-dialog-container .beta_testers_form{
+							margin: 0 -30px 0 30px !important; padding: 20px;
+						}
+							html>body .ui-dialog-container .beta_testers_form{
+								margin: 0 0px !important; padding: 0px;
+							}
+							
+								.ui-dialog-container .beta_testers_form fieldset{
+									display: block;
+									width: 320px;
+									border: 0;
+								}
+								
+								html>body .ui-dialog-container .beta_testers_form fieldset{
+									display: block;
+									margin: 20px 20px 0; padding: 0;
+									width: 320px;
+									border: 0;
+								}
+								
+						.beta_testers_form {margin: 0; padding: 0; text-align: left;}
+							.block .beta_testers_form fieldset{margin: 0; padding: 0; border: 0;}
+								.beta_testers_form fieldset div{
+									display: block;
+									margin: 0; padding: 5px 0;
+									float: left; clear: left;
+								}
+									.beta_testers_form fieldset div label{
+										display: block;
+										width: 160px;
+										float: left; clear: left;
+										text-align: left;
+									}
+									.beta_testers_form fieldset div.field input{
+										padding: 5px 8px;
+										width: 290px;
+										border: 1px solid #cadde0;
+										float: left; clear: left;
+									}
+						.beta_testers_form .nevermind{
+							font-size: 10px;
+							color: #999; text-decoration: none;
+							position: absolute; bottom: 5px; right: 5px;
+						}
+		.bg_shadow{
+			display: block;
+			margin: -157px 0 0 -12px; padding: 0;
+			width: 770px; height: 157px;
+			position: absolute; bottom: 0; left: 0;
+			background: transparent url(../_img/bg_shadow.png) 0 0 no-repeat;
+			float: left; clear: both;
+			z-index: -1;
+		}
+		
+		.foot{
+			display: block;
+			margin: 30px 0 30px; padding: 0px;
+			width: 100%;
+			background: transparent;
+			border-top: 1px solid #cadde0;
+			text-align: center;
+			float: left; clear: both;
+		}
+			.foot .block{
+				display: block;
+				margin: 0 auto; padding: 20px;
+				width: 715px;
+				color: #93a6a9; font-size: 90%;
+				text-align: left;
+				background: transparent;
+			}
+				.foot .block a{color: #93a6a9;}
+					.foot .block a:hover{color: #000;}
+					
+				.foot a img{border: 0;}
+					
+				.foot .block .footerCopy {width: 325px; margin-right: 15px}
+				.foot .block .donate {width: 200px; margin-right: 15px}
+					
+					
+
+
+
+
+
+/* ******* HIGHSLIDE CSS ******* */
+
+.highslide-wrapper div {
+    font-family: Verdana, Helvetica;
+    font-size: 10pt;
+}
+.highslide-html {
+    background-color: white;
+}
+.highslide-html-blur {
+}
+.highslide-html-content {
+	position: absolute;
+    display: none;
+}
+.highslide-loading {
+    display: block;
+	color: black;
+	font-size: 8pt;
+	font-family: sans-serif;
+	font-weight: bold;
+    text-decoration: none;
+	padding: 2px;
+	border: 1px solid black;
+    background-color: white;
+    
+    padding-left: 22px;
+    background-image: url(highslide/graphics/loader.white.gif);
+    background-repeat: no-repeat;
+    background-position: 3px 1px;
+}
+a.highslide-credits,
+a.highslide-credits i {
+    padding: 2px;
+    color: silver;
+    text-decoration: none;
+	font-size: 10px;
+}
+a.highslide-credits:hover,
+a.highslide-credits:hover i {
+    color: white;
+    background-color: gray;
+}
+
+
+/* Styles for the popup */
+.highslide-wrapper, .rounded-white {
+	background-color: white;
+}
+.highslide-wrapper .highslide-html-content {
+    width: 400px;
+    padding: 0 5px 5px 5px;
+}
+.highslide-wrapper .highslide-header {
+	padding-bottom: 5px;
+}
+.highslide-wrapper .highslide-header ul {
+	margin: 0;
+	padding: 0;
+	text-align: right;
+}
+.highslide-wrapper .highslide-header ul li {
+	display: inline;
+	padding-left: 1em;
+}
+.highslide-wrapper .highslide-header ul li.highslide-previous, .highslide-wrapper .highslide-header ul li.highslide-next {
+	display: none;
+}
+.highslide-wrapper .highslide-header a {
+	font-weight: bold;
+	color: gray;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.highslide-wrapper .highslide-header a:hover {
+	color: black;
+}
+.highslide-wrapper .highslide-header .highslide-move a {
+	cursor: move;
+}
+.highslide-wrapper .highslide-footer {
+	height: 11px;
+}
+.highslide-wrapper .highslide-footer .highslide-resize {
+	float: right;
+	height: 11px;
+	width: 11px;
+	background: url(highslide/graphics/resize.gif);
+}
+.highslide-wrapper .highslide-body {
+}
+.highslide-move {
+    cursor: move;
+}
+.highslide-resize {
+    cursor: nw-resize;
+}

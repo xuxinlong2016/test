@@ -1,0 +1,112 @@
+.notebook, .enw-TagLabel {
+  position: static;
+  float: clear;
+  }
+
+.notebook .name, .notebook .Icon, .enw-TagLabel .name { float: left; }
+
+.notebook .count, .enw-TagLabel .count {
+  position: static;
+  float: right;
+  margin-right: 8px;
+  }
+
+#sn_trash .count { margin-right: 5px; }
+
+#sn_trash .Icon, #sn_notebooks .Icon, #sn_attributes .Icon, #sn_saved .Icon, .SelectorView .Icon { 
+  display: inline !important;
+  vertical-align: middle;
+  }
+
+#sn_notebooks .h2 .gwt-Label, #sn_tags .h2 .gwt-Label, #sn_attributes .h2 .gwt-Label, #sn_saved .h2 .gwt-Label {
+  display: inline;
+  }
+
+.enw-NoteDragProxy .outer, .enw-NoteDragProxy .inner { 
+  padding-top: 0; 
+  padding-bottom: 6px; 
+  }
+
+.enw-NoteDragProxy .gwt-Label { 
+  padding-top: 2px; 
+  padding-bottom: 6px; 
+  }
+
+#single_view iframe { border: 1px solid white; }
+
+.gwt-FileUpload { 
+  height: 25px; 
+  margin-top: 0;
+  }
+
+.attachmentFileName { width: 300px; }
+
+.extraTopPadding { padding-top: 0px; }
+
+table.hsplitter { cursor: default; }
+
+.dragdrop-handle { cursor: pointer !important; }
+
+.lozengeWidget { padding-bottom: 3px; }
+.lozengeWidget .lozengeLeft, .lozengeWidget .lozengeRight { top: 2px; }
+.lozengeWidget .gwt-Label { padding-bottom: 0; }
+
+.note_checkbox { margin-right: 2px; }
+.note_info { width: 139px; }
+.note_thumb .note_checkbox { padding-left: 0; }
+
+.popout_divider { left: 8px; }
+
+.box_gift .col_header_extra { 
+  padding: 0px !important;
+  margin: 0px !important;
+  top: 190px !important;
+}
+
+.gift_padding_bottom { 
+  padding-bottom: 30px !important;
+}
+
+.notebook.default .DefaultIcon {
+  float: left;
+  margin-top: 3px;
+  }
+
+.nextImg, .previousImg {
+  top: -2px;
+  }
+
+.gwt-DialogBox .boxarea { display: block !important; }
+
+#toolbar_buttons * { display: inline !important; }
+
+.SelectorView-Header * { display: inline !important; }
+.SelectorView .gwt-MenuItem * { display: inline !important; }
+.SelectorView .gwt-MenuBar.Open > table {
+  width: 166px;
+}
+
+.gwt-DialogBox .SingleLine > * {
+  display: inline;
+}
+
+#note_attributes > .Icon, #note_attributes > .header {
+  display: inline;
+  vertical-align: middle;
+}
+
+.SearchExplanationBox .AccountLink .Icon {
+  display: inline;
+}
+
+.SelectorMenu.Sharing .Icon {
+  display: inline;
+}
+
+.LogInToEdit .Icon { 
+  display: inline;
+  margin-bottom: 3px;
+}
+.LogInToEdit .gwt-InlineLabel {
+  vertical-align: bottom;
+}

@@ -1,0 +1,58 @@
+label.required:after,
+label.error.required:after,
+label[class~="required"] {
+    content:"*";
+}
+label.error {
+  color: red;
+}
+
+/** IE specific CSS **/
+
+/*** Vignette ***/
+.vignette .vignette-icon {
+  text-align: center;
+}
+.vignette .vignette-icon > img {
+    margin: 0px 0px 0px 0px !important;
+}
+
+/*** Hanging views ***/
+.hanging_menu > ul > li.selected {
+  padding-right: 0px;
+}
+.hanging_menu > ul > li.selected > .dot.small.tr {
+  margin-bottom: -10px;
+  margin-right: -15px;
+}
+.hanging_view {
+  padding: 9px;
+}
+.hanging_view form input[type=submit] {
+  padding: 0px;
+}
+
+
+.quotaScale > .quotaNum.last {
+  margin-left: -2px;
+  margin-right: -25%;
+}
+
+/* MSIE correction for scaled input button bug */
+input[type=submit],
+button {
+    padding: 3px;
+    overflow: visible;
+}
+/* MSIE correction for scaled input button bug, but with more importance when it comes to user settings */
+.hanging_view input[type=submit],
+.hanging_view button {
+    padding: 3px !important;
+    overflow: visible !important;
+}
+
+
+/*** Checkout view ***/
+#CheckoutDetails ol.error-global-list {
+    margin-left: 30px;
+}

@@ -1,0 +1,273 @@
+
+body{
+	margin: 0;
+	padding: 0 30px 30px 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	background: #EFEFEF;
+	/* 滚动条样式*/
+	SCROLLBAR-FACE-COLOR:   #dedede;     
+  SCROLLBAR-HIGHLIGHT-COLOR:   #F5F9FF;     
+  SCROLLBAR-SHADOW-COLOR:   #828282;     
+  SCROLLBAR-3DLIGHT-COLOR:   #828282;     
+  SCROLLBAR-ARROW-COLOR:   #797979;     
+  SCROLLBAR-TRACK-COLOR:   #cccccc;     
+  SCROLLBAR-DARKSHADOW-COLOR:   #ffffff;
+}
+
+#navigation {
+	margin-bottom: 5px;
+	margin-top: 8px;
+	padding:5px 0 5px 0;
+	font-size: 100%;
+	font-weight: bold;
+	color: #009720;  
+	position: relative;
+	top: -4px;
+	left: -4px;
+	}
+	
+#nav {
+	background: #c7c7c7;
+	margin:0;
+	padding: 5px 0 5px 5px;
+	}
+	
+/* 导航栏的圆角 */
+#navigation #r1 {
+	height:1px;
+	margin:0 5px;
+	background: #C7C7C7;
+	overflow:hidden;
+}
+
+
+#navigation #r2 {
+	height:1.5px;
+	border-left:2px solid #C7C7C7;
+	border-right:2px solid #C7C7C7;
+	margin:0 3px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+#navigation #r3 {
+	height:1px;
+	border-left:1px solid #C7C7C7;
+	border-right:1px solid #C7C7C7;
+	margin:0 2px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+#navigation #r4 {
+	height:2px;
+	border-left:1px solid #C7C7C7;
+	border-right:1px solid #C7C7C7;
+	margin:0 1px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+
+
+#search {
+	margin-bottom: 3px;
+	position: relative;
+	top: -4px;
+	left: -4px;
+	z-index: 2;  /*可设置将该Div放置在其他元素之上（为正数表示在上，为负数表示在下）*/
+	}
+
+#search #filter {
+	margin-right: 0;
+	margin-bottom: 4px;
+	padding-left: 5px;
+	padding-top: 3px;
+	padding-right: 30px;
+	padding-bottom: 5px;
+	float: left;
+	background:#CCCCCC;
+	}
+
+#search #buttons {
+	float:left;
+	margin-bottom: 4px;
+	margin-left: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 3px;
+	background: #cccccc;
+	}
+	
+	
+
+a { color: #009900;  /*#77985c;*/ }
+
+table {
+	width: 100%;
+	border: 1px solid #000;
+	background: #fff;
+	position:relative;
+	top: -4px;
+	left: -4px;
+/*	white-space: nowrap;*/
+	}
+	
+table caption {
+	margin: 0 ;
+	padding: 8px 20px;
+	text-align: left;
+	border: 1px solid #000;
+	border-bottom: none;
+	background: #fff;
+	}
+
+table th, table td {
+	margin: 0;
+	padding: 5px 5px;
+	text-align: left;
+	border-bottom: 1px solid #b5b5b5;  /* 横向表格线 */
+	border-left: 1px solid #b5b5b5;    /* 纵向表格线 */
+	}
+	
+table th {
+	color: #999;
+	text-align: center;
+	}
+
+table .name {
+	text-align: left;
+	}
+	
+table tr {
+	background: #e6e6e6;
+	}
+
+table tr.alt {
+	background: #f1f1f1;
+	}
+	
+table td a {
+/*	display: block;*/
+	font-weight: bold;
+	}
+
+.forums {
+	background: #BEBEBE; /* #919191;*/
+	position:relative;  /*设置该属性是为了解决IE7和IE6对于relative的Bug，当子对象position的值为relative时，也要设置父对象的position为relative，
+	                    并且要配合z-index设置堆叠顺序。*/
+	}	
+	
+#measureInfo {
+	margin-top: 20px;
+	}	
+	
+#runInfo {
+	margin-bottom: 20px;
+	clear: both;
+	}
+	
+	
+/* 按钮样式 */
+.btn3_mouseout {
+	BORDER-RIGHT: #2C59AA 1px solid; 
+	PADDING-RIGHT: 8px; 
+	BORDER-TOP: #2C59AA 1px solid; 
+	PADDING-LEFT: 8px; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5); 
+	BORDER-LEFT: #2C59AA 1px solid; 
+	cursor:pointer; 
+	COLOR: black; 
+	PADDING-TOP: 5px; 
+	BORDER-BOTTOM: #2C59AA 1px solid; 
+	padding-bottom : 5px;
+	}
+.btn3_mouseover {
+	BORDER-RIGHT: #2C59AA 1px solid; 
+	PADDING-RIGHT: 8px; 
+	BORDER-TOP: #2C59AA 1px solid; 
+	PADDING-LEFT: 8px; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D7E7FA); 
+	BORDER-LEFT: #2C59AA 1px solid; 
+	cursor:pointer; COLOR: black; 
+	PADDING-TOP: 5px; 
+	BORDER-BOTTOM: #2C59AA 1px solid; 
+	padding-bottom : 5px;
+	}
+.btn3_mousedown{
+	BORDER-RIGHT: #FFE400 1px solid; 
+	PADDING-RIGHT: 8px; 
+	BORDER-TOP: #FFE400 1px solid; 
+	PADDING-LEFT: 8px; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5); 
+	BORDER-LEFT: #FFE400 1px solid; 
+	cursor:pointer; 
+	COLOR: black;
+	 PADDING-TOP: 5px; 
+	 BORDER-BOTTOM: #FFE400 1px solid; 
+	 padding-bottom : 5px;
+	}
+.btn3_mouseup {
+	BORDER-RIGHT: #2C59AA 1px solid; 
+	PADDING-RIGHT: 8px; 
+	BORDER-TOP: #2C59AA 1px solid; 
+	PADDING-LEFT: 8px; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5); 
+	BORDER-LEFT: #2C59AA 1px solid; 
+	cursor:pointer; 
+	COLOR: black;
+	PADDING-TOP: 5px; 
+	BORDER-BOTTOM: #2C59AA 1px solid; 
+	padding-bottom : 5px;
+ 	}
+
+/* 节超显示(节为绿色，超为红色) */
+
+td p {
+	margin:0;
+	padding:0;
+	}
+
+.green {
+	color: #009900; /*#77985c*/  
+	font-weight: bold;
+	letter-spacing: 1px;
+	cursor:pointer;
+	}
+	
+.red {
+	color:#FF0000;
+	font-weight: bold;
+	letter-spacing: 1px;
+	cursor:pointer;
+	}
+	
+/* 图片样式 */
+img {
+	cursor:pointer;
+	}
+	
+/*当页面加载时，页面中的“输入框”为显示状态，当点击时，成输入状态*/
+.displayState {
+	border:none; 
+	background:#f1f1f1; 
+	width:40px;
+	cursor: default;
+	}
+	
+.inputState {
+	border:inherit;
+	background: #ffffff; 
+	width:40px;
+	cursor: auto;
+	}
+	
+.factDisplayState {
+	border:none; 
+	background:#e6e6e6; 
+	width:40px;
+	cursor: default;
+	}
+	

@@ -1,0 +1,67 @@
+
+/* 导航栏 */
+#navigation {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 3px 0 3px 20px;
+	font-size: 100%;
+	font-weight: bold;
+	color: #009720;
+	position: relative;
+	top: -4px;
+	left: -4px;
+	}
+	
+#nav {
+	background: #c7c7c7;
+	margin:0;
+	padding: 5px 0 5px 5px;
+	}
+
+/* 导航栏的圆角 */
+#navigation #r1 {
+	height:1px;
+	overflow:hidden;
+	margin:0 5px;
+	background:#C7C7C7;
+}
+
+#navigation #r2 {
+	height:1px;
+	border-left:2px solid #C7C7C7;
+	border-right:2px solid #C7C7C7;
+	margin:0 3px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+
+#navigation #r3 {
+	height:1px;
+	border-left:1px solid #C7C7C7;
+	border-right:1px solid #C7C7C7;
+	margin:0 2px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+
+#navigation #r4 {
+	height:2px;
+	border-left:1px solid #C7C7C7;
+	border-right:1px solid #C7C7C7;
+	margin:0 1px;
+	background:#C7C7C7;
+	overflow:hidden;
+}
+
+/* 表格设置 */
+.tr_relative {
+	Z-INDEX: 1; 
+	POSITION: relative; 
+	TOP: expression(document.getElementById(dv).scrollTop-2)
+}
+.tr_relative1 {
+	Z-INDEX: 1; 
+	POSITION: relative; 
+	TOP: expression(document.getElementById(dv1).scrollTop-2)
+}
+
